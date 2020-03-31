@@ -435,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1403361733}
+  speed: 5
   forwardForce: 100
   sidewardForce: 600
 --- !u!1 &1522540888
