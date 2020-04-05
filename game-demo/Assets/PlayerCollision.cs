@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if(collisionInfo.collider.tag == "Obstacle")
         {
+            movement.rb.constraints = RigidbodyConstraints.None;
             movement.enabled = false;
         }
     }

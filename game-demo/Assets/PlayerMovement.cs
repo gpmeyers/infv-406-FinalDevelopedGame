@@ -13,6 +13,12 @@ public class PlayerMovement : MonoBehaviour
     // Boolean to check if the player character is grounded (~0.1 tolerance)
     private bool onGround = true;
 
+    // This will be called once
+    void start()
+    {
+        rb.constraints = RigidbodyConstraints.FreezeRotationX;
+    }
+
     // This will be called once per frame. Using FixedUpdate because some physics will be declared here.
     void FixedUpdate()
     {
