@@ -2,14 +2,15 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Instance of the RigidBody associated with the player character
     public Rigidbody rb;
 
-    private Vector3 moveVector;
-
-    public float speed = 10f;
-
+    // All of the forces associated with different types of movement
+    public float forwardForce = 1000f;
+    public float sidewaysForce = 100f;
     public float jumpForce = 1000f;
 
+    // Boolean to check if the player character is grounded (~0.1 tolerance)
     private bool onGround = true;
 
     // This will be called once per frame. Using FixedUpdate because some physics will be declared here.
@@ -25,25 +26,33 @@ public class PlayerMovement : MonoBehaviour
             onGround = false;
         }
 
+        // Forward Force
+        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+
         // Jump mechanic
         if((Input.GetKey("w") || Input.GetKey("up")) && onGround)
         {
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+
+            Vector3 sidev = rb.velocity;
+            sidev.x = 0.0f;
+            rb.velocity = sidev;
+
             rb.AddForce(0, jumpForce * Time.deltaTime, 0);
+
+            rb.constraints = RigidbodyConstraints.None;
         }
 
-        // Reset the movement vector for a new update
-        moveVector = Vector3.zero;
-
-        // Player can not move horizontally while jumping
-        if (onGround)
+        // Add velocity going right
+        if((Input.GetKey("d") || Input.GetKey("right")) && onGround)
         {
-            moveVector.x = Input.GetAxisRaw("Horizontal") * speed;
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
-        // Player will always receive a constant forward speed whether in the air or on the ground
-        moveVector.z = speed;
-
-        // Update the position of the RigidBody (our player character)
-        rb.position = rb.position + (moveVector * Time.deltaTime);
+        // Add velocity going left
+        if((Input.GetKey("a") || Input.GetKey("left")) && onGround)
+        {
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
     }
 }
