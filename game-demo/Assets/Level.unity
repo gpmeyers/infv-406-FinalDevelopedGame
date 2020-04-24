@@ -345,6 +345,7 @@ MonoBehaviour:
   platforms:
   - {fileID: 8283915893829459287, guid: c90888b2bd5e82c41ab3ba7f3c3d80d5, type: 3}
   - {fileID: 483463763285677733, guid: 7c216d4d6f7b7c4458fbf5957820769c, type: 3}
+  player: {fileID: 1403361733}
 --- !u!4 &795654514
 Transform:
   m_ObjectHideFlags: 0
@@ -719,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1403361733}
-  forwardForce: 2500
+  forwardForce: 2000
   sidewaysForce: 120
   jumpForce: 4000
 --- !u!114 &1403361739

@@ -23,4 +23,9 @@ public class GameManagerObj : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void ExitPlatform()
+    {
+        FindObjectOfType<GenerateWorld>().GeneratePlatform();
+    }
 }
