@@ -7,6 +7,15 @@ public class GameManagerObj : MonoBehaviour
 
     public float restartDelay = 1f;
 
+    // Check for quit
+    void update()
+    {
+        if (Input.GetKeyDown("escape"))
+        {
+            Application.Quit();
+        }
+    }
+
     // Function for the Game Manager to perform tasks for endgame state
     public void EndGame()
     {

@@ -50,13 +50,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Add velocity going right
-        if((Input.GetKey("d") || Input.GetKey("right")) && onGround)
+        if(Input.GetKey("d") || Input.GetKey("right"))
         {
             rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
         // Add velocity going left
-        if((Input.GetKey("a") || Input.GetKey("left")) && onGround)
+        if(Input.GetKey("a") || Input.GetKey("left"))
         {
             rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }

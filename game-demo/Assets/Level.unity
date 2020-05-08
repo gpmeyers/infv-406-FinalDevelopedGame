@@ -470,8 +470,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platforms:
-  - {fileID: 8283915893829459287, guid: c90888b2bd5e82c41ab3ba7f3c3d80d5, type: 3}
   - {fileID: 483463763285677733, guid: 7c216d4d6f7b7c4458fbf5957820769c, type: 3}
+  - {fileID: 4289937161978179316, guid: 5e74ebd8d7e976f4da4c1fb62619ded4, type: 3}
+  - {fileID: 7024152374488410631, guid: df6c2d16d18fbe447961f01565f95265, type: 3}
+  - {fileID: 5592443255329410175, guid: 223bc4310749a154b8cd350e5e60c0be, type: 3}
+  - {fileID: 3686936487182323098, guid: b21ccf0c3a29f6e4e97b649c0160f7d8, type: 3}
+  - {fileID: 6826962826263805137, guid: 3a51f2d05692d7a4ab28057af87f3ab5, type: 3}
 --- !u!4 &795654514
 Transform:
   m_ObjectHideFlags: 0
@@ -847,9 +851,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1403361733}
-  forwardForce: 2000
+  forwardForce: 1500
   sidewaysForce: 120
-  jumpForce: 4000
+  jumpForce: 2700
 --- !u!114 &1403361739
 MonoBehaviour:
   m_ObjectHideFlags: 0
